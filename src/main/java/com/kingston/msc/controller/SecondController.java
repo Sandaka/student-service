@@ -18,14 +18,30 @@ public class SecondController {
     @Autowired
     private RestTemplateBuilder restTemplateBuilder;
 
+    @Autowired
+    private CourseProviderServiceProxy courseProviderServiceProxy;
+
     @GetMapping("/message")
     public String test() {
         return "Student service works...";
     }
 
+    /*
+     * This is with RestTemplate
+     * */
     @GetMapping("/testCP")
     public String testCP() {
         String text = restTemplateBuilder.build().getForObject("http://localhost:8080/cps/course/coursetest", String.class);
+        return text;
+    }
+
+    /*
+    * This is with Feign
+    * */
+    @GetMapping("/testCPFeign")
+    public String testCPFeign() {
+        System.out.println("feign method works...");
+        String text = courseProviderServiceProxy.testCPService();
         return text;
     }
 }
