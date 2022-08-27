@@ -1,4 +1,4 @@
-package com.kingston.msc.controller;
+package com.kingston.msc.resttemplate;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.client.RestTemplateBuilder;
@@ -18,8 +18,8 @@ public class SecondController {
     @Autowired
     private RestTemplateBuilder restTemplateBuilder;
 
-    @Autowired
-    private CourseProviderServiceProxy courseProviderServiceProxy;
+//    @Autowired
+//    private CourseProviderServiceProxy courseProviderServiceProxy;
 
     @GetMapping("/message")
     public String test() {
@@ -32,16 +32,17 @@ public class SecondController {
     @GetMapping("/testCP")
     public String testCP() {
         String text = restTemplateBuilder.build().getForObject("http://localhost:8080/cps/course/coursetest", String.class);
+        //ResponseEntity responseEntity = restTemplateBuilder.build().getForEntity("http://localhost:8080/cps/course/coursetest",)
         return text;
     }
 
     /*
     * This is with Feign
     * */
-    @GetMapping("/testCPFeign")
-    public String testCPFeign() {
-        System.out.println("feign method works...");
-        String text = courseProviderServiceProxy.testCPService();
-        return text;
-    }
+//    @GetMapping("/testCPFeign")
+//    public String testCPFeign() {
+//        System.out.println("feign method works...");
+//        String text = courseProviderServiceProxy.testCPService();
+//        return text;
+//    }
 }
