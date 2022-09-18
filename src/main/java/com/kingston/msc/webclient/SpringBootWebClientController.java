@@ -16,7 +16,7 @@ import reactor.core.publisher.Mono;
  * Date: 6/26/22
  */
 @RestController
-@RequestMapping("/sts/consumer")
+@RequestMapping("/sts")
 public class SpringBootWebClientController {
 
     @Autowired

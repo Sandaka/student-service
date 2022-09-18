@@ -62,11 +62,11 @@
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
-<!--		<dependency>-->
-<!--			<groupId>org.springframework.cloud</groupId>-->
-<!--			<artifactId>spring-cloud-starter-openfeign</artifactId>-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-openfeign</artifactId>
 <!--			<version>3.0.2</version>-->
-<!--		</dependency>-->
+		</dependency>
 <!--		&lt;!&ndash; https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-openfeign-core &ndash;&gt;-->
 <!--		<dependency>-->
 <!--			<groupId>org.springframework.cloud</groupId>-->
